@@ -1,6 +1,24 @@
 ﻿<div class="container body-content">
 
     <h1>@ViewBag.title</h1>
+    
+    <table class="job-listing">@*creates a table*@
+        @foreach(var jobs in ViewBag.jobs)
+            {
+                <tr>@*Sets off each row in a table*@
+                    <td>@*Sets off each cell in a row*@
+                        <ul>@*Creates an unordered list*@
+                            <li>ID: @jobs.Id</li>@*Encompasses each list item*@
+                            <li>NAME: @jobs.Name</li>
+                            <li>EMPLOYER: @jobs.Employer</li>
+                            <li>LOCATIOIN: @jobs.Location</li>
+                            <li>POSITION: @jobs.PositionType</li>
+                            <li>SKILL: @jobs.CoreCompetency</li>
+                       </ul>                                    
+                    </td>
+                </tr>
+            }
+    </table>
 
     @{
         //TODO #1: Use a loop to display job results in a table.

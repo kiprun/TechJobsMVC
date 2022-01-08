@@ -41,7 +41,7 @@ namespace TechJobsMVC.Controllers
         }
 
         // list jobs by column and value
-        public IActionResult Jobs(string column, string value)
+        public IActionResult Jobs(string column, string value)//renders a view to display info for the jobs that relate to selected category
         {
             List<Job> jobs;
             if (column.ToLower().Equals("all"))
