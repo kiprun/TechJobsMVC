@@ -13,7 +13,6 @@
                     <label for="@column.Key">@column.Value</label>
                 </span>
             }
-
         </p>
 
         <p>
@@ -22,12 +21,27 @@
         </p>
 
         <input type="submit" value="Search" />
-    </form>
 
-    <hr />
-
-    @{
-        //TODO #4: Loop over the search results to display all job fields.
-    }
-
+        @if (ViewBag.jobs != null)
+        {
+            <table class="job-listing"> @*same as /list/Jobs*@
+                @foreach (var jobs in ViewBag.jobs)
+                {
+                    <tr>
+                        <td>
+                            <ul>
+                                <li>ID: @jobs.Id</li>
+                                <li>NAME: @jobs.Name</li>
+                                <li>EMPLOYER: @jobs.Employer</li>
+                                <li>LOCATION: @jobs.Location</li>
+                                <li>POSITION: @jobs.PositionType</li>
+                                <li>SKILL: @jobs.CoreCompetency</li>
+                            </ul>
+                        </td>
+                    </tr>
+                }
+                </table>
+          }
+        </form>
+    <hr />  
 </div>
